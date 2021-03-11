@@ -1,0 +1,8 @@
+venv
+.vscode
+static/js/demo
+static/scss
+templates/others
+static/vendor/bootstrap/scss
+static/vendor/fontawesome-free
+docs.md
