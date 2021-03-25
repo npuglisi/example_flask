@@ -1,10 +1,8 @@
 # -*- coding: utf-8 -*-
-"""
-Spyder Editor
 
-Este é um arquivo de script TCC - NPL - POLITICA .
+##Spyder Editor
+##Este é um arquivo de script TCC - NPL - POLITICA .
 
-"""
 import pandas as pd                                  ## carregar bases 
 import string                                        ## pre processamento 
 ##import random                                      ## gerar randoms
@@ -137,7 +135,7 @@ def processamentominer(x):
 ## identificando principais assuntos atravez de entidades 
 
 def returnentidade (x):
-    var_ent = ['LOC','PER','ORG'] ## LOC = Localizacao , PER = Pessoas , Organizacao 
+    var_ent = ['LOC','PER','ORG','GPE'] ## LOC = Localizacao , PER = Pessoas , Organizacao 
     var_doc = pln_pt(str(x))
     lista_ent = []
     for entidade  in var_doc.ents : 
@@ -157,7 +155,7 @@ def analise_texto(texto_site):
     
     
     ## base treinamento   
-    base_polit_train = pd.read_csv('data/DS_POLITIZE_TCC.csv') ## arquivo com o modelo
+    base_polit_train = pd.read_csv('data/DS_POLITIZE_TCC_v8.csv') ## arquivo com o modelo
     ## base teste 
     p1 = pln_pt(str(processamentominer(str(base_polit_train))))
     p2 = pln_pt(str(processamentominer(str(base_tlix))))
@@ -188,7 +186,7 @@ def analise_texto(texto_site):
     df_stack=df.stack(level=0) 
     counter=df_stack.value_counts()[0:10] # top 10 palavras com maior frequencia 
     fig, ax = plt.subplots(figsize=(10,4))
-    ax.bar(counter.index,counter.values) ## palavra e qtd   
+    ax.barh(counter.index,counter.values) ## palavra e qtd   
 
     buf2 = BytesIO()
     fig.savefig(buf2, format="png")
