@@ -6,6 +6,5 @@
 * Flask
 * Pandas
 * Bootstrap
-* Chart.JS
 
 ## Thanks
