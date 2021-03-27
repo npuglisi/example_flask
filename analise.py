@@ -178,7 +178,7 @@ def analise_texto(texto_site):
     fig.savefig(buf, format="png")
     data = base64.b64encode(buf.getbuffer()).decode("ascii")
     
-    html_wordcloud = f"<img src='data:image/png;base64,{data}' width='200' height='100'/>"
+    html_wordcloud = f"<img src='data:image/png;base64,{data}' width='400' height='200'/>"
 
     ### frequencia palavra 
     freq_texto = processamentominer(str(base_tlix))
